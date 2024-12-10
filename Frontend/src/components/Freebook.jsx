@@ -5,18 +5,25 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import axios from "axios";
-
 import Cards from "./Cards";
+
 function Freebook() {
   const [book, setBook] = useState([]);
+
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("https://bookstorebackend-2ur2.onrender.com/book");
-
+        const res = await axios.get(
+          "https://bookstorebackend-2ur2.onrender.com/book"
+        );
         const data = res.data.filter((data) => data.category === "Free");
         console.log(data);
         setBook(data);
+
+        // Trigger resize event after data is set
+        setTimeout(() => {
+          window.dispatchEvent(new Event("resize"));
+        }, 100);
       } catch (error) {
         console.log(error);
       }
@@ -30,6 +37,7 @@ function Freebook() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    adaptiveHeight: true,
     initialSlide: 0,
     responsive: [
       {
@@ -58,27 +66,27 @@ function Freebook() {
       },
     ],
   };
-  return (
-    <>
-      <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
-        <div>
-          <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium veritatis alias pariatur ad dolor repudiandae eligendi
-            corporis nulla non suscipit, iure neque earum?
-          </p>
-        </div>
 
-        <div>
-          <Slider {...settings}>
-            {book.map((item) => (
-              <Cards item={item} key={item.id} />
-            ))}
-          </Slider>
-        </div>
+  return (
+    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 overflow-hidden">
+      <div>
+        <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          veritatis alias pariatur ad dolor repudiandae eligendi corporis nulla
+          non suscipit, iure neque earum?
+        </p>
       </div>
-    </>
+
+      <div>
+        <Slider {...settings}>
+          {book.map((item) => (
+            <Cards item={item} key={item.id} />
+          ))}
+        </Slider>
+      </div>
+    </div>
   );
 }
+
 export default Freebook;
