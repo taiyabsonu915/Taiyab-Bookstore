@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import axios from "axios";
 import Cards from "./Cards";
 
@@ -17,10 +15,9 @@ function Freebook() {
           "https://bookstorebackend-2ur2.onrender.com/book"
         );
         const data = res.data.filter((data) => data.category === "Free");
-        console.log(data);
         setBook(data);
 
-        // Trigger resize event after data is set
+        // Trigger resize to reinitialize slider properly
         setTimeout(() => {
           window.dispatchEvent(new Event("resize"));
         }, 100);
@@ -31,25 +28,24 @@ function Freebook() {
     getBook();
   }, []);
 
-const settings = {
+  const settings = {
     dots: true,
-    infinite: false,
+    infinite: false, // Disable infinite scrolling for better UX
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 3, // Default for large screens
+    slidesToScroll: 1, // Scroll one slide at a time
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // For tablets and smaller laptops
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           dots: true,
-          infinite: false,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // For tablets
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -57,7 +53,7 @@ const settings = {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 480, // For mobile devices
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -67,23 +63,24 @@ const settings = {
     ],
   };
 
-
   return (
     <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 overflow-hidden">
-      <div>
+      <div className="mb-4">
         <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          veritatis alias pariatur ad dolor repudiandae eligendi corporis nulla
-          non suscipit, iure neque earum?
+        <p className="text-gray-600">
+          Discover free courses to enhance your skills. Start learning today!
         </p>
       </div>
 
       <div>
         <Slider {...settings}>
-          {book.map((item) => (
-            <Cards item={item} key={item.id} />
-          ))}
+          {book.length > 0 ? (
+            book.map((item) => <Cards item={item} key={item.id} />)
+          ) : (
+            <div className="text-center text-gray-500">
+              <p>No free courses available at the moment.</p>
+            </div>
+          )}
         </Slider>
       </div>
     </div>
