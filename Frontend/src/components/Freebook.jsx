@@ -31,7 +31,7 @@ function Freebook() {
     getBook();
   }, []);
 
-   const settings = {
+const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -44,8 +44,8 @@ function Freebook() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: false,
           dots: true,
+          infinite: false,
         },
       },
       {
@@ -66,6 +66,7 @@ function Freebook() {
       },
     ],
   };
+
 
 
   return (
