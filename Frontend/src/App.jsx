@@ -7,6 +7,7 @@ import Contact from "./components/contact";
 import About from "./components/about";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./context/AuthProvider";
+//https://taiyab-frontend.onrender.com/
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
