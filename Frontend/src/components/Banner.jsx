@@ -11,9 +11,11 @@ function Banner() {
               <span className="text-pink-500">new everyday!!!</span>
             </h1>
             <p className="text-sm md:text-xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              et totam. Tempora amet atque expedita, quae corrupti totam sed
-              pariatur corporis at veniam est voluptas animi!
+            "In the pages of a book, we find our way,<br />
+             A journey of dreams, where we choose to stay. <br />
+             Each word is a step, each line a spark, <br />
+             Leading us forward, lighting the dark."<br />
+             <span className="md:ml-[70%] ml-[70%] ">...Taiyab(सोनू)</span>  <br />
             </p>
             <label className="input input-bordered flex items-center gap-2">
               <svg
@@ -28,7 +30,8 @@ function Banner() {
               <input type="text" className="grow" placeholder="Email" />
             </label>
           </div>
-          <button className="btn mt-6 btn-secondary">Get Started</button>
+          <a href="mailto:taiyabsonu915@gmail.com"><button className="btn mt-6 btn-secondary">Get Started</button></a>
+          
         </div>
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img

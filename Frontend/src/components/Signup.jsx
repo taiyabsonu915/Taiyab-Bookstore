@@ -46,7 +46,7 @@ function Signup() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <Link
               to="/"
-              className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4"
+              className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 bg-blue-700"
             >
               ✕
             </Link>

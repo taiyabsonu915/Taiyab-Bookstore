@@ -45,7 +45,7 @@ function Login() {
             {/* Close Button */}
             <Link
               to="/"
-              className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4"
+              className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 bg-blue-500 hover:bg-blue-300 "
               onClick={() => document.getElementById("my_modal_3").close()}
             >
               ✕

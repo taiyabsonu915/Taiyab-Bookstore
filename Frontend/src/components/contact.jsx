@@ -70,7 +70,7 @@ function Contact () {
                 d="M3 10h11M9 21V3m-6 6a9 9 0 0118 0c0 5-4 9-9 9a9 9 0 01-9-9z"
               />
             </svg>
-            <span className="text-xl">Mobile: <a href="tel:+919876543210" className="text-green-500 hover:underline">+91-761997XXXX</a></span>
+            <span className="text-xl">Portfolio: <a href="https://clever-chimera-0113f8.netlify.app/"  target="_blank"className="text-green-500 hover:underline">Taiyab Portfolio</a></span>
           </div>
         </div>
       </div>
