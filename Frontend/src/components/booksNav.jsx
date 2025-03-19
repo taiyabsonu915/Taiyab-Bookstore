@@ -50,7 +50,6 @@ function BooksNav() {
   
   return (
     <>
-// className="mt-20 navbar-center ml-2 lg:flex justify-center items-center hidden "
 <div className={` max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-800 dark:text-white fixed top-[13%] left-0 right-0 z-50 rounded-md hidden md:block ${
           sticky
             ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
