@@ -162,7 +162,7 @@ const Books = () => {
 
 
               <button
-                className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg transition ${
+                className={`w-20 px-3 py-2 mt-3 overflow-auto rounded-lg transition ${
                   cart.some((item) => item.id === selectedBook.id) ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"
                 }`}
                 disabled={cart.some((item) => item.id === selectedBook.id)}
@@ -170,7 +170,7 @@ const Books = () => {
               >
                 {cart.some((item) => item.id === selectedBook.id) ? "Saved" : "Save  "}
               </button>
-              <button className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg md:ml-[100px] ml-[80px] transition ${
+              <button className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg md:ml-[100px] ml-[60px] transition ${
                   delivery.some((item) => item.id === selectedBook.id) ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"
                 }`}
                 disabled={delivery.some((item) => item.id === selectedBook.id)}

@@ -70,7 +70,7 @@ function Search() {
 
   return (
     <>
-      <div className="max-w-screen-2xl flex container mx-auto md:px-20 px-4 mt-10 md:mt-[8%] fixed z-20">
+      <div className="max-w-screen-2xl flex container mx-auto md:px-20 px-4 mt-[14%] md:mt-[11%] fixed z-30">
         <div className="relative w-full">
           <input
             type="text"
@@ -103,7 +103,7 @@ function Search() {
         )}
 
         {Object.keys(books).map((category) => (
-          <div key={category} className="mb-8 mt-[10%]">
+          <div key={category} className="mb-8 mt-[24%] md:mt-[14%] ">
             <h2 className="text-2xl font-bold mb-4">{category} Books</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {books[category].map((book, index) => (
@@ -163,7 +163,7 @@ function Search() {
               <p className="text-gray-600">{selectedBook.volumeInfo.authors?.join(", ")}</p>
 
               <button
-                className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg transition ${
+                className={`w-20 px-3 py-2 mt-3 overflow-auto rounded-lg transition ${
                   cart.some((item) => item.id === selectedBook.id)
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-blue-500 text-white hover:bg-blue-600"
@@ -173,7 +173,7 @@ function Search() {
               >
                 {cart.some((item) => item.id === selectedBook.id) ? "Saved" : "Save"}
               </button>
-              <button className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg md:ml-[100px] ml-[80px] transition ${
+              <button className={`w-30 px-4 py-2 mt-3 overflow-auto rounded-lg md:ml-[100px] ml-[60px] transition ${
                   delivery.some((item) => item.id === selectedBook.id) ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"
                 }`}
                 disabled={delivery.some((item) => item.id === selectedBook.id)}

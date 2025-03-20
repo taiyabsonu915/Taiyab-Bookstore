@@ -8,9 +8,9 @@ function MobBooksNav() {
   const [book, setBook] = useState([]);
   return (
     <>
-            <div className="md:mt-5 mt-8  rounded-lg flex flex-col items-center text-center ">
+            <div className="md:mt-5 mt-[23%]  rounded-lg flex flex-col items-center text-center ">
           
-          <div className="fixed z-30   w-full md:w-1/2 mb-6">
+          <div className="fixed z-40   w-full md:w-1/2 mb-6">
           <div className="md:hidden ">
           <button
         onClick={() => setIsOpen(!isOpen)}
